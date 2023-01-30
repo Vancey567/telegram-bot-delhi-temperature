@@ -7,8 +7,8 @@ import fs from 'fs';
 
 const token = process.env.TELEGRAM_BOT;
 const X_API_KEY = process.env.X_API_KEY;
-const chatId = process.env.CHAT_ID;
 const bot = new TelegramBot(token, {polling: true});
+let chatId;
 
 const city = "delhi";
 
@@ -40,6 +40,7 @@ async function sendTemperature() {
 setInterval(sendTemperature, 60 * 60 * 1000);
 
 bot.on('message', (msg) => {
+    chatId = msg.chat.id;
     if (msg.text.toString().toLowerCase().indexOf('/temperature') === 0) {
       sendTemperature();
     }
