@@ -25,7 +25,7 @@ async function sendTemperature() {
         const data = await res.json();
 
         const temperature = data.temp;
-        const message = `The current temperature in New Delhi is ${temperature}°C.`;
+        const message = `The current temperature in New Delhi is ${temperature}°C`;
         console.log(message);
         fs.appendFileSync('log.log', message + '\n');
         bot.sendMessage(chatId, message);
