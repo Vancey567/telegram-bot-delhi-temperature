@@ -4,3 +4,5 @@ error.log
 log.log
 extra.js
 process.js
+/Controllers/
+/Routes/
