@@ -94,14 +94,14 @@ bot.onText(/\/start/, async(msg) => {
 })
 
 bot.onText(/\/stop/, async (msg) => {
-    const chatId = msg.chat.id;
+    const id = msg.chat.id;
     const removed = await ChatService.removeChatId(chatId);
     if(removed) {
-        bot.sendMessage(chatId, "You will no longer receive the temperature updates, Thank You!!");
+        bot.sendMessage(id, "You will no longer receive the temperature updates, Thank You!!");
         chatId = null;
         hasChatId = false;
     } else {
-        bot.sendMessage(chatId, "Something Went wrong, Try again!!");
+        bot.sendMessage(id, "Something Went wrong, Try again!!");
     }
 })
 
