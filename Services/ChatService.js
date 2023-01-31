@@ -43,7 +43,6 @@ class ChatService {
     removeChatId = async (chatId) => {
         try {
             const removed = await chatModel.findOneAndDelete({chatId: chatId});
-            console.log({removed});
             if(removed) return true;
             return false
         } catch (err) {
