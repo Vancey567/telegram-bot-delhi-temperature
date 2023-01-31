@@ -98,6 +98,8 @@ bot.onText(/\/stop/, async (msg) => {
     const removed = await ChatService.removeChatId(chatId);
     if(removed) {
         bot.sendMessage(chatId, "You will no longer receive the temperature updates, Thank You!!");
+        chatId = null;
+        hasChatId = false;
     } else {
         bot.sendMessage(chatId, "Something Went wrong, Try again!!");
     }
