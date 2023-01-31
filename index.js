@@ -55,8 +55,8 @@ async function sendTemperature() {
     }
 }
 
-// setInterval(sendTemperature, 20 * 1000); // 1min
-setInterval(sendTemperature, 60 * 60 * 1000); // 1hr
+setInterval(sendTemperature, 20 * 1000); // 1min
+// setInterval(sendTemperature, 60 * 60 * 1000); // 1hr
 
 bot.on('message', async (msg) => {
     chatId = msg.chat.id;
